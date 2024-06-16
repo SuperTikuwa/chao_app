@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/labstack/echo/v4"
 	"github.com/supertikuwa/chao_app/api/handler"
 )
@@ -15,6 +13,7 @@ func main() {
 	})
 
 	e.GET("roll", handler.Roll)
-	fmt.Println("Starting server on port 80")
+	e.GET("ws", handler.Websocket)
+
 	e.Logger.Fatal(e.Start(":80"))
 }
